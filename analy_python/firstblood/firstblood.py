@@ -2,19 +2,15 @@
 from math import exp, log, sqrt
 import re
 from datetime import date, time, datetime, timedelta
-from operator import itemgetter
-import sys
-import glob
-import os
 
 # Print a simple string
-print("Output #1: I'm excited to learn Python.")
+print("Output #1: Excited! I'm excited to learn Python.")
 
 # Add two numbers together
-x = 4
-y = 5
+x = 28
+y = 14
 z = x + y
-print("Output #2: Four plus five equals {0:d}.".format(z))
+print("Output #2: The answer is {0:d}.".format(z))
 
 # Add two lists together
 a = [1, 2, 3, 4]
@@ -22,13 +18,17 @@ b = ["first", "second", "third", "fourth"]
 c = a + b
 print("Output #3: {0}, {1}, {2}".format(a, b, c))
 
+# ------
 # INTEGERS
-x = 9
+# ------
+x = 6
 print("Output #4: {0}".format(x))
 print("Output #5: {0}".format(3**4))
 print("Output #6: {0}".format(int(8.3)/int(2.7)))
 
+# ------
 # FLOATING-POINT NUMBERS
+# ------
 print("Output #7: {0:.3f}".format(8.3/2.7))
 y = 2.5*4.8
 print("Output #8: {0:.1f}".format(y))
@@ -41,7 +41,9 @@ print("Output #11: {0:.4f}".format(exp(3)))
 print("Output #12: {0:.2f}".format(log(4)))
 print("Output #13: {0:.1f}".format(sqrt(81)))
 
+# ------
 # STRINGS
+# ------
 # A string with single quotes, so include a backslash before the single quote
 print("Output #14: {0:s}".format('I\'m enjoying learning Python'))
 
@@ -67,8 +69,8 @@ string2 = "short string."
 sentence = string1 + string2
 print("Output #18: {0:s}".format(sentence))
 
-# Repeat a string four times
-print("Output #19: {0:s} {1:s}{2:s}".format("She is", "very "*4, "beautiful."))
+# Repeat a string three times
+print("Output #19: {0:s} {1:s}{2:s}".format("She is", "very " * 3, "beautiful."))
 
 # Determine the number of characters in a string, including spaces and punctuation
 m = len(sentence)
@@ -80,8 +82,7 @@ string1_list1 = string1.split()
 string1_list2 = string1.split(" ", 2)
 print("Output #21: {0}".format(string1_list1))
 print("Output #22: FIRST PIECE:{0} SECOND PIECE:{1} THIRD PIECE:{2}"\
-.format(string1_list2[0], string1_list2[1], string1_list2[2])
-
+.format(string1_list2[0], string1_list2[1], string1_list2[2]))
 string2 = "Your,deliverable,is,due,in,June"
 string2_list = string2.split(',')
 print("Output #23: {0}".format(string2_list))
@@ -127,7 +128,9 @@ print("Output #37 (on each word):")
 for word in string8_list:
     print("{0:s}".format(word.capitalize()))
 
+# ------
 # REGULAR EXPRESSIONS / PATTERN MATCHING
+# ------
 # Count the number of times a pattern appears in a string
 string = "The quick brown fox jumps over the lazy dog."
 string_list = string.split()
@@ -145,7 +148,7 @@ pattern = re.compile(r"(?P<match_word>The)", re.I)
 print("Output #39:")
 for word in string_list:
     if pattern.search(word):
-		print("{:s}".format(pattern.search(word).group('match_word')))
+        print("{:s}".format(pattern.search(word).group('match_word')))
 
 # Substitute the letter "a" for the word "the" in the string
 string = "The quick brown fox jumps over the lazy dog."
@@ -153,7 +156,9 @@ string_to_find = r"The"
 pattern = re.compile(string_to_find, re.I)
 print("Output #40: {:s}".format(pattern.sub("a", string)))
 
+# ------
 # DATES
+# ------
 # Print today's date, as well as the year, month, and day elements
 today = date.today()
 print("Output #41: today: {0!s}".format(today))
@@ -194,12 +199,12 @@ print("Output #54: {!s}".format(datetime.strptime(date1, '%m/%d/%Y')))
 print("Output #55: {!s}".format(datetime.strptime(date2, '%b %d, %Y')))
 
 # Show the date portion only
-print("Output #56: {!s}".format(datetime.date(datetime.strptime\
-(date3, '%Y-%m-%d')))
-print("Output #57: {!s}".format(datetime.date(datetime.strptime\
-(date4, '%B %d, %Y')))
+print("Output #56: {!s}".format(datetime.date(datetime.strptime(date3, '%Y-%m-%d'))))
+print("Output #57: {!s}".format(datetime.date(datetime.strptime(date4, '%B %d, %Y'))))
 
+# ------
 # LISTS
+# ------
 # Use square brackets to create a list
 # len() counts the number of elements in a list
 # max() and min() find the maximum and minimum numbers in numeric lists
