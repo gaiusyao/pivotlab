@@ -2,6 +2,10 @@
 from math import exp, log, sqrt
 import re
 from datetime import date, time, datetime, timedelta
+from operator import itemgetter
+import sys
+import glob
+import os
 
 # Print a simple string
 print("Output #1: Excited! I'm excited to learn Python.")
@@ -297,7 +301,9 @@ my_lists = [[123,2,2,444], [22,6,6,444], [354,4,4,678], [236,5,5,678], \
 my_lists_sorted_by_index_3_and_0 = sorted(my_lists, key=itemgetter(3,0))
 print("Output #92: {}".format(my_lists_sorted_by_index_3_and_0))
 
+# ------
 # TUPLES
+# ------
 # Use parentheses to create a tuple
 my_tuple = ('x', 'y', 'z')
 print("Output #93: {}".format(my_tuple))
@@ -322,7 +328,9 @@ my_tuple = ('x', 'y', 'z')
 print("Output #100: {}".format(tuple(my_list)))
 print("Output #101: {}".format(list(my_tuple)))
 
+# ------
 # DICTIONARIES
+# ------
 # Use curly braces to create a dictionary
 # Use a colon between keys and values in each pair
 # len() counts the number of key-value pairs in a dictionary
@@ -368,7 +376,7 @@ print("Output #118: {!s}".format(a_dict.get('four', 'Not in dict')))
 # Use sorted() to sort a dictionary
 # To sort a dictionary without changing the original dictionary,
 # make a copy first
-print("Output #119: " + str(a_dict)
+print("Output #119: {}".format(a_dict))
 dict_copy = a_dict.copy()
 ordered_dict1 = sorted(dict_copy.items(), key=lambda item: item[0])
 print("Output #120 (order by keys): {}".format(ordered_dict1))
@@ -379,7 +387,9 @@ print("Output #122 (order by values, descending): {}".format(ordered_dict3))
 ordered_dict4 = sorted(dict_copy.items(), key=lambda x: x[1], reverse=False)
 print("Output #123 (order by values, ascending): {}".format(ordered_dict4))
 
+# ------
 # CONTROL FLOW
+# ------
 # if-else statement
 x = 5
 if x > 4 or x != 9:
@@ -445,7 +455,9 @@ while x < 11:
     print("{!s}".format(x))
     x += 1
 
+# ------
 # FUNCTIONS
+# ------
 # Calculate the mean of a sequence of numeric values
 def getMean(numericValues):
     return sum(numericValues)/len(numericValues) if len(numericValues) > 0 \
@@ -457,7 +469,9 @@ print("Output #138 (mean): {!s}".format(getMean(my_list)))
 #import numpy as np
 #print np.mean(my_list)
 
+# ------
 # EXCEPTIONS
+# ------
 # Calculate the mean of a sequence of numeric values
 def getMean(numericValues):
     return sum(numericValues)/len(numericValues)
@@ -481,9 +495,13 @@ else:
 finally:
     print("Output #140 (Finally): The finally block is executed every time")
 
+# ------
+# FILE
+# ------
 # READ A FILE
+'''
 # Read a single text file
-#input_file = sys.argv[1]
+input_file = sys.argv[1]
 
 ## Read a text file (older method) ##
 #print("Output #141:")
@@ -493,10 +511,10 @@ finally:
 #filereader.close()
 
 ## Read a text file (newer method) ##
-#print("Output #142:")
-#with open(input_file, 'r', newline='') as filereader:
-#    for row in filereader:
-#        print("{}".format(row.strip()))
+print("Output #142:")
+with open(input_file, 'r', newline='') as filereader:
+    for row in filereader:
+        print("{}".format(row.strip()))
 
 #print("Output #143:")
 # READ MULTIPLE FILES
@@ -506,30 +524,33 @@ finally:
 #    with open(input_file, 'r', newline='') as filereader:
 #       for row in filereader:
 #           print("{}".format(row.strip()))
+'''
 
 # WRITE TO A FILE
+'''
 # Write to a text file
-#my_letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
-#max_index = len(my_letters)
-#output_file = sys.argv[1]
-#filewriter = open(output_file, 'w')
-#for index_value in range(len(my_letters)):
-#    if index_value < (max_index-1):
-#        filewriter.write(my_letters[index_value]+'\t')
-#    else:
-#        filewriter.write(my_letters[index_value]+'\n')
-#filewriter.close()
-#print("Output #144: Output written to file")
+my_letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+max_index = len(my_letters)
+output_file = sys.argv[1]
+filewriter = open(output_file, 'w')
+for index_value in range(len(my_letters)):
+    if index_value < (max_index-1):
+        filewriter.write(my_letters[index_value]+'\t')
+    else:
+        filewriter.write(my_letters[index_value]+'\n')
+filewriter.close()
+print("Output #144: Output written to file")
 
 # Write to a CSV file
-#my_numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-#max_index = len(my_numbers)
-#output_file = sys.argv[1]
-#filewriter = open(output_file, 'a')
-#for index_value in range(len(my_numbers)):
-#    if index_value < (max_index-1):
-#        filewriter.write(str(my_numbers[index_value])+',')
-#    else:
-#        filewriter.write(str(my_numbers[index_value])+'\n')
-#filewriter.close()
-#print("Output #145: Output appended to file")
+my_numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+max_index = len(my_numbers)
+output_file = sys.argv[1]
+filewriter = open(output_file, 'a')
+for index_value in range(len(my_numbers)):
+    if index_value < (max_index-1):
+        filewriter.write(str(my_numbers[index_value])+',')
+    else:
+        filewriter.write(str(my_numbers[index_value])+'\n')
+filewriter.close()
+print("Output #145: Output appended to file")
+'''
