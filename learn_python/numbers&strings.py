@@ -45,6 +45,14 @@ for multi-line comment strings.'''))
 print("Output #14: {0:s}".format("""You can also use triple double quotes
 for multi-line comment strings."""))     
 
+# index
+gaius_yao = "Product Manager"
+gaius_yao[0]    # 'P'，字符串第一个字符
+gaius_yao[2]    # 'o'，字符串第二个字符
+gaius_yao[-1]   # 'r'，字符串最后一个字符
+gaius_yao[:7]   # 'Product'，字符串前七个字符
+gaius_yao[-7:]  # 'Manager'，字符串后七个字符
+
 # split()
 string1 = "My deliverable is due in May"
 string1_list1 = string1.split()
@@ -95,3 +103,7 @@ string5_list = string5.split()
 print("Output #31 (on each word):")
 for word in string5_list:
     print("{0:s}".format(word.capitalize()))      
+    
+# len()
+question = "the answer to life universe and everything"
+print("The answer is {0}".format(len(question)))    
