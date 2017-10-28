@@ -1,9 +1,8 @@
-# !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Fri Oct 27 19:49:29 2017
-@author: gaiusyao
-"""
+# !/usr/bin/env python3
+# Created on Fri Oct 27 19:49:29 2017
+# @author: gaiusyao
+
 from math import exp, log, sqrt
 
 print("Hello world")
