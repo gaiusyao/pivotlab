@@ -4,6 +4,8 @@
 
 ### firstblood 
 
+## learn_python *//Python基础学习*
+
 ---
 
 ## datawarehouse *//数据集*
